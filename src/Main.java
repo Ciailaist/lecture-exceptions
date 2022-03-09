@@ -1,18 +1,26 @@
-import java.util.Arrays;
-
 public class Main {
 
   public static void main(String[] args) {
-    int[] ia = new int[15];
     try {
-      for (int i = 0; i < 10; i++) {
-        ia[i] = i;
-        System.out.println(Arrays.toString(ia));
-      }
-    } catch (ArrayIndexOutOfBoundsException e) {
-      System.out.println(e.getMessage());
-      return;
+      System.out.println("Throwing an exception...");
+      int c = 5 / 0;
+    } catch (Exception e) {
+      System.out.println("Catching the first exception");
+    } finally {
+      System.out.println("First finally");
     }
+
+    System.out.println("After first try-block-finally!");
+
+    try {
+      System.out.println("Not throwing an exception...");
+    } catch (Exception e) {
+      System.out.println("Catching the second exception");
+    } finally {
+      System.out.println("Second finally");
+    }
+
+    System.out.println("After first try-block-finally!");
   }
 
 }
