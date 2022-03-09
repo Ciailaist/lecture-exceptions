@@ -1,26 +1,20 @@
+import java.util.Scanner;
+
 public class Main {
 
-  public static void main(String[] args) {
-    try {
-      System.out.println("Throwing an exception...");
-      int c = 5 / 0;
-    } catch (Exception e) {
-      System.out.println("Catching the first exception");
-    } finally {
-      System.out.println("First finally");
-    }
+  public static void main(String[] args) throws WrongFileExtension {
+    Scanner scanner = new Scanner(System.in);
 
-    System.out.println("After first try-block-finally!");
+    System.out.print("Please enter an file format: ");
+    String extension = scanner.nextLine();
 
-    try {
-      System.out.println("Not throwing an exception...");
-    } catch (Exception e) {
-      System.out.println("Catching the second exception");
-    } finally {
-      System.out.println("Second finally");
-    }
 
-    System.out.println("After first try-block-finally!");
+    if (extension.compareToIgnoreCase("xml") == 0 ||
+            extension.compareToIgnoreCase("csv") == 0 ||
+            extension.compareToIgnoreCase("json") == 0)
+      System.out.printf("The extension '%d' is allowed.%n", extension);
+    else
+      throw new WrongFileExtension(extension);
   }
 
 }
