@@ -3,7 +3,7 @@ import java.util.Arrays;
 public class Main {
 
   public static void main(String[] args) {
-    int[] ia = new int[15];
+    int[] ia = new int[5];
     try {
       for (int i = 0; i < 10; i++) {
         ia[i] = i;
