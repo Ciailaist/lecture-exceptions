@@ -18,13 +18,10 @@ public class Main {
         System.out.printf("%nResult: %d / %d = %d%n", numerator, denominator, quotient);
 
         continueLoop = false;
-      } catch (InputMismatchException e) {
+      } catch (ArithmeticException | InputMismatchException e) {
         e.printStackTrace();
         scanner.nextLine(); // discard input so we can try again
-        System.out.printf("You must enter integers. Please try again.%n");
-      } catch (ArithmeticException e) {
-        e.printStackTrace();
-        System.out.printf("Cannot divide by 0. Please try again.%n");
+        System.out.printf("Either an ArithmeticException or an InputMismatchException was thrown. Please try again.%n");
       }
     }
   }
